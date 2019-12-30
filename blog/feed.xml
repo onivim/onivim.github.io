@@ -5,7 +5,7 @@
         <link>https://your-docusaurus-test-site.com/blog</link>
         <description>The best place to stay up-to-date with the latest Onivim 2 User Manual news and events.</description>
         <lastBuildDate>Tue, 24 Oct 2017 06:00:00 GMT</lastBuildDate>
-        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>Onivim 2 User Manual Blog</title>
