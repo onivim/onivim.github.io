@@ -121,6 +121,8 @@ and provide logging output.</p>
 <p>There are a also few options that can be specified using either environment variables or command line arguments:</p>
 <ul>
 <li><code>ONI2_DEBUG</code> or <code>--debug</code> (e.g., <code>ONI2_DEBUG=1 oni2 -f</code> or <code>oni2 -f --debug</code>) - enable debug logging. This is very verbose but is helpful when logging issues!</li>
+<li><code>--trace</code> - enable trace logging. This is extremely verbose!</li>
+<li><code>--quiet</code> - print only error log messages. This can be sueful to quickly see if an extension failed to load, for example.</li>
 <li><code>ONI2_LOG_FILE</code> or <code>--log-file</code> (e.g., <code>ONI2_LOG_FILE='oni.log' oni2</code> or <code>oni2 --log-file oni.log</code>) - enable logging to a file.</li>
 <li><code>ONI2_LOG_FILTER</code> or <code>--log-filter</code> (e.g.. <code>ONI2_LOG_FILTER=Oni2.* oni2 -f</code> or <code>oni2 -f --log-filter &quot;Oni2.*&quot;</code>) - filter log messages using a comma-separated list of glob patterns matched against each message's namespace. Prefix a pattern with <code>-</code> to exclude rather than include matches. E.g. <code>ONI2_LOG_FILTER=&quot;Oni2.*, -*Ext*&quot;</code> will include everything that matches <code>Oni2.*</code>, but exclude messages that also match <code>*Ext*</code>.</li>
 </ul>
