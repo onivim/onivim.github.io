@@ -86,7 +86,50 @@
 </ul>
 <p>There are a set of default rules provided by Onivim, but the customized rules are appended to the bottom - thus, user key bindings are esxecuted first.</p>
 <h3><a class="anchor" aria-hidden="true" id="key-format"></a><a href="#key-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>key</code> format</h3>
-<p>TODO</p>
+<p>The <code>key</code> parameter supports both <em>Vim style</em> and <em>VSCode style</em> key bindings.</p>
+<h4><a class="anchor" aria-hidden="true" id="vim-style"></a><a href="#vim-style" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim style</h4>
+<p>Vim-style keybindings are surrounded by <code>&lt;</code> and <code>&gt;</code>, and allow the following modifiers:</p>
+<table>
+<thead>
+<tr><th>Modifier</th><th>Description</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td><code>C-</code></td><td>Control key</td><td><code>&lt;C-P&gt;</code></td></tr>
+<tr><td><code>S-</code></td><td>Shift key</td><td><code>&lt;S-P&gt;</code></td></tr>
+<tr><td><code>A-</code></td><td>Alt key</td><td><code>&lt;A-P&gt;</code></td></tr>
+<tr><td><code>D-</code></td><td>Command key</td><td><code>&lt;D-P&gt;</code></td></tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> A difference between Vim and Onivim is that <code>D-</code> also handles the 'Meta' and 'Win' keys on Linux and Windows, respectively</p>
+</blockquote>
+<p>Modifiers may be combined, for example:</p>
+<pre><code class="hljs">[
+  { <span class="hljs-attr">"key"</span>: <span class="hljs-string">"&lt;C-S-P&gt;"</span>, <span class="hljs-attr">"command"</span>: <span class="hljs-string">"quickOpenFiles"</span>, <span class="hljs-attr">"when"</span>: <span class="hljs-string">"editorTextFocus"</span> }
+]
+</code></pre>
+<p>The <code>&lt;C-S-P&gt;</code> key binding would require the Control, Shift, and P keys to be pressed.</p>
+<h4><a class="anchor" aria-hidden="true" id="vscode-style"></a><a href="#vscode-style" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VSCode style</h4>
+<p>VSCode-style keybindings feature friendly names, like:</p>
+<table>
+<thead>
+<tr><th>Modifier</th><th>Description</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Ctrl+</code></td><td>Control key</td><td><code>Ctrl+P</code></td></tr>
+<tr><td><code>Shift+</code></td><td>Shift key</td><td><code>Shift+P</code></td></tr>
+<tr><td><code>Alt+</code></td><td>Alt key</td><td><code>Alt+J</code></td></tr>
+<tr><td><code>Meta+</code></td><td>Meta/Command/Windows key</td></tr>
+<tr><td><code>Cmd+</code></td><td>Same as above</td><td><code>Cmd+P</code></td></tr>
+<tr><td><code>Win+</code></td><td>Same as above</td><td><code>Win+P</code></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="key-sequences"></a><a href="#key-sequences" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Key Sequences</h3>
+<p>Onivim supports binding to key sequences, which require multiple key-presses in succession to engage.</p>
+<p>Example:</p>
+<pre><code class="hljs">  { <span class="hljs-attr">"key"</span>: <span class="hljs-string">"jk"</span>, <span class="hljs-attr">"command"</span>: <span class="hljs-string">"vim.esc"</span>, <span class="hljs-attr">"when"</span>: <span class="hljs-string">"insertMode"</span> }
+</code></pre>
+<p>This would require a key-press of 'j', followed by 'k'.</p>
 <h3><a class="anchor" aria-hidden="true" id="command-arguments"></a><a href="#command-arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>command</code> arguments</h3>
 <h3><a class="anchor" aria-hidden="true" id="when-clause-contexts"></a><a href="#when-clause-contexts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>when</code> clause contexts</h3>
 <p>Onivim 2 gives you control over when key bindings are enabled through the <code>when</code> clause.</p>
@@ -174,6 +217,15 @@
 <tr><td>Control+W, Control+K</td><td>Move up a split</td><td><code>window.moveUp</code></td></tr>
 </tbody>
 </table>
+<h3><a class="anchor" aria-hidden="true" id="vim-commands"></a><a href="#vim-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim commands</h3>
+<table>
+<thead>
+<tr><th>Default Key Binding</th><th>Description</th><th>Command</th></tr>
+</thead>
+<tbody>
+<tr><td>Escape</td><td>Used to send <code>&lt;ESC&gt;</code> to Vim</td><td><code>vim.esc</code></td></tr>
+</tbody>
+</table>
 <h3><a class="anchor" aria-hidden="true" id="additional-commands"></a><a href="#additional-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional Commands</h3>
 <table>
 <thead>
@@ -184,4 +236,4 @@
 <tr><td>n/a</td><td>Disable KeyDisplayer</td><td><code>keyDisplayer.disable</code></td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/configuration/settings"><span class="arrow-prev">← </span><span>Settings</span></a><a class="docs-next button" href="/docs/configuration/extensions"><span>VSCode Extensions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#editing-the-keybindings">Editing the keybindings</a><ul class="toc-headings"><li><a href="#keybinding-format">Keybinding Format</a></li><li><a href="#key-format"><code>key</code> format</a></li><li><a href="#command-arguments"><code>command</code> arguments</a></li><li><a href="#when-clause-contexts"><code>when</code> clause contexts</a></li></ul></li><li><a href="#commands">Commands</a><ul class="toc-headings"><li><a href="#basic-editing">Basic Editing</a></li><li><a href="#list--menu-commands">List / Menu commands</a></li><li><a href="#window-management">Window Management</a></li><li><a href="#additional-commands">Additional Commands</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home" style="opacity:0"><img src="/img/logo2.png" alt="Onivim 2 User Manual" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting-started/why-onivim">Getting Started</a><a href="/docs/using-onivim/moving-in-onivim">Basic Usage</a><a href="/docs/for-developers/building">For Developers</a><a href="/docs/other/faq">FAQ</a></div><div><h5>Community</h5><a href="https://reddit.com/r/onivim">Reddit</a><a href="https://discord.gg/7maEAxV">Discord</a><a href="https://twitter.com/oni_vim" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/onivim/oni2">GitHub</a><a class="github-button" href="https://github.com/onivim/oni2" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Outrun Labs, LLC</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/configuration/settings"><span class="arrow-prev">← </span><span>Settings</span></a><a class="docs-next button" href="/docs/configuration/extensions"><span>VSCode Extensions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#editing-the-keybindings">Editing the keybindings</a><ul class="toc-headings"><li><a href="#keybinding-format">Keybinding Format</a></li><li><a href="#key-format"><code>key</code> format</a></li><li><a href="#key-sequences">Key Sequences</a></li><li><a href="#command-arguments"><code>command</code> arguments</a></li><li><a href="#when-clause-contexts"><code>when</code> clause contexts</a></li></ul></li><li><a href="#commands">Commands</a><ul class="toc-headings"><li><a href="#basic-editing">Basic Editing</a></li><li><a href="#list--menu-commands">List / Menu commands</a></li><li><a href="#window-management">Window Management</a></li><li><a href="#vim-commands">Vim commands</a></li><li><a href="#additional-commands">Additional Commands</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home" style="opacity:0"><img src="/img/logo2.png" alt="Onivim 2 User Manual" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting-started/why-onivim">Getting Started</a><a href="/docs/using-onivim/moving-in-onivim">Basic Usage</a><a href="/docs/for-developers/building">For Developers</a><a href="/docs/other/faq">FAQ</a></div><div><h5>Community</h5><a href="https://reddit.com/r/onivim">Reddit</a><a href="https://discord.gg/7maEAxV">Discord</a><a href="https://twitter.com/oni_vim" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/onivim/oni2">GitHub</a><a class="github-button" href="https://github.com/onivim/oni2" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Outrun Labs, LLC</section></footer></div></body></html>
