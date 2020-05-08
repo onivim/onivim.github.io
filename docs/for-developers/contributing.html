@@ -68,6 +68,55 @@
 </ul>
 <p>To improve the chances to get a pull request merged, you should select an issue that is labeled with <a href="https://github.com/onivim/oni2/issues?q=is%3Aissue+is%3Aopen+label%3Abug">bug</a> or <a href="https://github.com/onivim/oni2/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22">help wanted</a>.</p>
 <p>In addition, Onivim 2 is built on <a href="https://github.com/revery-ui/revery">Revery</a> - any work or improvements there will directly improve Onivim 2, as well!</p>
+<h4><a class="anchor" aria-hidden="true" id="changelog-generation"></a><a href="#changelog-generation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Changelog Generation</h4>
+<p>We use a script to generate the change log based on metadata picked up from the commit message, and pull request title and body. For the changelog to be generated successfully it's therefore important that these follow the exact format explained below.</p>
+<h5><a class="anchor" aria-hidden="true" id="pull-request-title"></a><a href="#pull-request-title" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pull Request Title</h5>
+<p>Pull request titles should have the following format:</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>): <span class="hljs-tag">&lt;<span class="hljs-name">subject</span>&gt;</span>
+</code></pre>
+<p>where <code>type</code> can be one of</p>
+<ul>
+<li><strong>feat:</strong> A new feature</li>
+<li><strong>fix:</strong> A bug fix</li>
+<li><strong>refactor:</strong> A code change that neither fixes a bug nor adds a feature</li>
+<li><strong>perf:</strong> A code change that improves performance</li>
+<li><strong>test:</strong> Adding missing or correcting existing tests</li>
+<li><strong>docs:</strong> Documentation only changes</li>
+<li><strong>chore:</strong> Changes to the build process or auxiliary tools and libraries such as documentation generation</li>
+</ul>
+<p><code>scope</code> is optional, but &quot;encouraged&quot;. It is typically one of the <a href="https://github.com/onivim/oni2/labels?utf8=%E2%9C%93&amp;q=A+-">&quot;area&quot; issue labels</a> or the name of a feature project. Supplementary information, like associated issues, can be added to the scope following a <code>/</code>. For example, a PR that fixes issue <code>#123</code> regarding vim could have the type and scope <code>fix(vim/#123)</code>.</p>
+<p><code>subject</code> should contain a succinct description of the change:</p>
+<ul>
+<li>use the imperative, present tense: &quot;change&quot; not &quot;changed&quot; nor &quot;changes&quot;</li>
+<li>don't capitalize first letter</li>
+<li>no dot (.) at the end</li>
+</ul>
+<p>Do NOT add temporary tags, like <code>[WIP]</code>, to the title. Instead use GitHub's draft function and/or labels.</p>
+<p>Some examples:</p>
+<ul>
+<li><code>feat(scm): add support for multiple providers</code></li>
+<li><code>fix(vim/#123): get_op_type error when using gcc</code></li>
+<li><code>refactor(editor): remove duplication</code></li>
+<li><code>chore(ci): fix build failure on CentOS VM</code></li>
+</ul>
+<p><em>Attribution: Adapted from <a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commit-message-format">Angular's commit guidelines</a></em></p>
+<h5><a class="anchor" aria-hidden="true" id="pull-request-body"></a><a href="#pull-request-body" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pull Request Body</h5>
+<p>More details can be provided in a <code>changelog</code> code block in the body of the pull request if a longer description is needed or if there are beaking changes:</p>
+<pre><code class="hljs">```changelog    
+Detailed description of the change
+Can span multiple lines
+
+&lt;breaking&gt;This change breaks my brain&lt;/breaking&gt;
+```
+</code></pre>
+<p>Text inside <code>&lt;breaking&gt;</code> tags will be listed in the changelog as separate items so that they can be emphasized. ALL breaking changes MUST be listed in this way. If in doubt, list it anyway. We'll remove it later in the process if it's considered insignificant.</p>
+<p>The rest of the text will become the overall description of the change and can include anything considered text content in XML. Use <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#Predefined_entities_in_XML">predefined entities</a> in place of characters with special meaning in XML. And please do still try to be brief!</p>
+<h5><a class="anchor" aria-hidden="true" id="commit-message"></a><a href="#commit-message" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Commit Message</h5>
+<p><em>Note: this section is relevant only to maintainers who merge PRs. Contributors can safely ignore this.</em></p>
+<p>Commits messages pushed to <code>master</code> should have the following format:</p>
+<pre><code class="hljs">&lt;<span class="hljs-keyword">type</span>&gt;(&lt;scope&gt;): &lt;subject&gt; (#&lt;<span class="hljs-type">PR</span> number&gt;)
+</code></pre>
+<p>where <code>type</code> and <code>scope</code> is as described above. This is usually what Github generates automatically when squashing a PR, assuming the PR title was formatted correctly.</p>
 <h3><a class="anchor" aria-hidden="true" id="submitting-a-pull-request"></a><a href="#submitting-a-pull-request" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Submitting a Pull Request</h3>
 <p>Before we can accept a pull request from you, you'll need to sign a a <a href="https://gist.github.com/bf98297731dd69b9b580ca1d7fd2b90e">Contributor License Agreement (CLA)</a>. It is an automated process and you'll be guided
 through it the first time you open a PR.</p>
@@ -91,22 +140,14 @@ through it the first time you open a PR.</p>
 <li><strong>Trace</strong> if the output is overwhelming or just excessively detailed. Namespace filtering is expected at this level</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="branch-naming"></a><a href="#branch-naming" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Branch Naming</h3>
-<p>We recommend this scheme for naming branches: <code>&lt;type&gt;/&lt;area&gt;/&lt;description&gt;</code></p>
-<p><code>type</code> is one of:</p>
-<ul>
-<li><code>bugfix</code> - a change that fixes a bug</li>
-<li><code>feature</code> - a change that adds new functionality</li>
-<li><code>doc</code> - a change that modifies the documentation</li>
-<li><code>refactoring</code> - a code change that does not fix a bug or change a feature</li>
-<li><code>dependency</code> - a change to bring in a new dependency</li>
-</ul>
-<p><code>area</code> corresponds to our <a href="https://github.com/onivim/oni2/labels?utf8=%E2%9C%93&amp;q=A+-">Area Labels</a></p>
-<p><code>description</code> is just a short, hyphen-delimited blurb to very briefly describe the change.</p>
+<p>We recommend this scheme for naming branches: <code>&lt;type&gt;/&lt;scope&gt;/&lt;description&gt;</code></p>
+<p>where <code>type</code> and <code>scope</code> are as defined in the <a href="#PR_title">Pull Request title section</a> above</p>
+<p><code>description</code> is a short, hyphen-delimited blurb to very briefly describe the change.</p>
 <p>Some examples:</p>
 <ul>
-<li><code>bugfix/vim/fix-gd-crash</code></li>
-<li><code>feature/exthost/go-to-definition</code></li>
-<li><code>refactoring/editor-component/remove-duplication</code></li>
+<li><code>fix/vim/gd-crash</code></li>
+<li><code>feat/exthost/go-to-definition</code></li>
+<li><code>refactor/editor-component/remove-duplication</code></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="discussion-etiquette"></a><a href="#discussion-etiquette" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Discussion Etiquette</h2>
 <p>We strictly enforce a <a href="https://github.com/onivim/oni2/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a> and have a zero-tolerance policy towards infractions. Be considerate to others, and try to be courteous and professional at all times.</p>
