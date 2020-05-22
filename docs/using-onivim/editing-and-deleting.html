@@ -55,9 +55,59 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Editing and Deleting Text</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="insert-mode"></a><a href="#insert-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Insert Mode</h2>
-<p>TODO</p>
+<p>Insert mode is the mode you usually think about in a text editor - when you press a key, the corresponding character is inserted.</p>
+<p>To enter <code>insert</code> mode from <code>normal</code> mode:</p>
+<ul>
+<li><kbd>i</kbd> - enter <code>insert</code> mode before the cursor position, on the same line.</li>
+<li><kbd>I</kbd> - enter <code>insert</code> mode at the beginning of the current line.</li>
+<li><kbd>a</kbd> - enter <code>insert</code> mode after the cursor position, on the same line.</li>
+<li><kbd>A</kbd> - enter <code>insert</code> mode at the end of the current line.</li>
+<li><kbd>o</kbd> - create a line after the current line, and enter <code>insert</code> mode.</li>
+<li><kbd>O</kbd> - create a line before the current line, and enter <code>insert</code> mode.</li>
+</ul>
+<p>To leave <code>insert</code> mode, and go back to <code>normal</code> mode, you can use the following keys:</p>
+<ul>
+<li><kbd>Escape</kbd></li>
+<li><kbd>Control</kbd>+<kbd>c</kbd></li>
+<li><kbd>Control</kbd>+<kbd>[</kbd></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="operators"></a><a href="#operators" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Operators</h2>
-<p>TODO</p>
+<p>Besides insert mode, there are other ways to manipulate text in <code>normal</code> mode - that's where operators come in. Vim and the 'vi' family of editors,
+like Onivim, provide a sort of text-editing-language, and operators are an important piece of this language.</p>
+<h3><a class="anchor" aria-hidden="true" id="basic-operators"></a><a href="#basic-operators" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Operators</h3>
+<ul>
+<li><kbd>d</kbd><em>motion</em> - <strong>delete</strong> the text described by <em>motion</em>.</li>
+<li><kbd>c</kbd><em>motion</em> - <strong>change</strong> the text described by <em>motion</em>.</li>
+</ul>
+<p>A motion is a cursor movement, as described in <a href="/docs/using-onivim/moving-in-onivim">Moving Around</a>.</p>
+<p>Examples:</p>
+<ul>
+<li><kbd>c</kbd><kbd>$</kbd> - change the text from the cursor position to the end-of-theline.</li>
+<li><kbd>d</kbd><kbd>d</kbd> - delete the current line.</li>
+<li><kbd>d</kbd><kbd>10</kbd><kbd>j</kbd> - delete the 10 lines below the cursor.</li>
+<li><kbd>d</kbd><kbd>G</kbd> - delete to the end of the file.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="other-operators"></a><a href="#other-operators" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other operators</h3>
+<ul>
+<li><kbd>y</kbd><em>motion</em> - <em>yank</em> text to a specified register.</li>
+<li><kbd>gu</kbd><em>motion</em> - convert text described by <em>motion</em> to lowercase.</li>
+<li><kbd>gU</kbd><em>motion</em> - convert text described by <em>motion</em> to uppercase.</li>
+<li><kbd>&gt;&gt;</kbd><em>motion</em> - shift lines described by <em>motion</em> to the right.</li>
+<li><kbd>&lt;&lt;</kbd><em>motion</em> - shift lines described by <em>motion</em> to the left.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="repeat"></a><a href="#repeat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Repeat</h2>
+<p>The <kbd>.</kbd> &quot;dot operator&quot; is a very useful command - it repeats the last command.</p>
+<p>For example, if <kbd>d</kbd><kbd>d</kbd> was used to delete a line,
+pressing the <kbd>.</kbd> key would repeat the command, and delete another line.</p>
 <h2><a class="anchor" aria-hidden="true" id="undo--redo"></a><a href="#undo--redo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Undo / Redo</h2>
-<p>TODO</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/using-onivim/moving-in-onivim"><span class="arrow-prev">← </span><span>Moving Around</span></a><a class="docs-next button" href="/docs/using-onivim/visual-mode"><span>Visual Mode (Selection)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#insert-mode">Insert Mode</a></li><li><a href="#operators">Operators</a></li><li><a href="#undo--redo">Undo / Redo</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home" style="opacity:0"><img src="/img/logo2.png" alt="Onivim 2 User Manual" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting-started/why-onivim">Getting Started</a><a href="/docs/using-onivim/moving-in-onivim">Basic Usage</a><a href="/docs/for-developers/building">For Developers</a><a href="/docs/other/faq">FAQ</a></div><div><h5>Community</h5><a href="https://reddit.com/r/onivim">Reddit</a><a href="https://discord.gg/7maEAxV">Discord</a><a href="https://twitter.com/oni_vim" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/onivim/oni2">GitHub</a><a class="github-button" href="https://github.com/onivim/oni2" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Outrun Labs, LLC</section></footer></div></body></html>
+<p>It can be scary to experiment with the operators and motions, for fear of losing your work!</p>
+<p>However, you can always undo your change:</p>
+<ul>
+<li>In <code>insert</code> mode, you can use <kbd>Command</kbd>+<kbd>z</kbd> (<kbd>Control</kbd>+<kbd>z</kbd> on other platforms)</li>
+<li>In <code>normal</code> mode, <kbd>u</kbd> will undo the last change, while <kbd>Control</kbd>+<kbd>r</kbd> will redo it.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="further-reading"></a><a href="#further-reading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further Reading</h2>
+<p>We've only scratched the surface of motions and operators available here -
+checkout the <a href="http://vimdoc.sourceforge.net/htmldoc/motion.html">Vim documentation on motions and operators</a>
+for more.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/using-onivim/moving-in-onivim"><span class="arrow-prev">← </span><span>Moving Around</span></a><a class="docs-next button" href="/docs/using-onivim/visual-mode"><span>Visual Mode (Selection)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#insert-mode">Insert Mode</a></li><li><a href="#operators">Operators</a><ul class="toc-headings"><li><a href="#basic-operators">Basic Operators</a></li><li><a href="#other-operators">Other operators</a></li></ul></li><li><a href="#repeat">Repeat</a></li><li><a href="#undo--redo">Undo / Redo</a></li><li><a href="#further-reading">Further Reading</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home" style="opacity:0"><img src="/img/logo2.png" alt="Onivim 2 User Manual" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting-started/why-onivim">Getting Started</a><a href="/docs/using-onivim/moving-in-onivim">Basic Usage</a><a href="/docs/for-developers/building">For Developers</a><a href="/docs/other/faq">FAQ</a></div><div><h5>Community</h5><a href="https://reddit.com/r/onivim">Reddit</a><a href="https://discord.gg/7maEAxV">Discord</a><a href="https://twitter.com/oni_vim" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/onivim/oni2">GitHub</a><a class="github-button" href="https://github.com/onivim/oni2" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Outrun Labs, LLC</section></footer></div></body></html>
