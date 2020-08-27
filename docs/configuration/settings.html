@@ -94,6 +94,13 @@
 <li><p><code>editor.quickSuggestions</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, code completions will be enabled. When <code>false</code>, code completions will be disabled.</p>
 <p>Code completions also support finer-grained configuration, via a JSON object of the form: <code>{ &quot;comments&quot;: true, &quot;strings&quot;: true, &quot;others&quot;: true }</code>.</p>
 <p>This allows enabling code-completions based on the current syntax scope.</p></li>
+<li><p><code>editor.renderWhitespace</code> <em><em>(</em>&quot;all&quot;|&quot;boundary&quot;|&quot;selection&quot;|&quot;none&quot;</em> default: <code>&quot;selection&quot;</code>)__ - Controls how whitespace (tabs/spaces) are rendered:</p>
+<ul>
+<li><em>&quot;all&quot;</em> - Render all whitespace</li>
+<li><em>&quot;boundary&quot;</em> - Render whitespace except for single characters between text</li>
+<li><em>&quot;selection&quot;</em> - Render whitespace characters in visual mode selected text</li>
+<li><em>&quot;none&quot;</em> - Don't render whitespace at all</li>
+</ul></li>
 <li><p><code>editor.rulers</code> <strong>(<em>list of int</em> default: <code>[]</code>)</strong> - Render vertical rulers at given columns.</p></li>
 <li><p><code>editor.scrollShadow</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, show a drop-shadow effect at the borders when there is additional content past the visible area.</p></li>
 <li><p><code>editor.smoothScroll</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, smoothly scroll the editor when the viewport is adjusted due to a cursor motion.</p></li>
