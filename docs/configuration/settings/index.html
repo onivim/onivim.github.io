@@ -102,14 +102,17 @@
 <li><em>&quot;none&quot;</em> - Don't render whitespace at all</li>
 </ul></li>
 <li><p><code>editor.rulers</code> <strong>(<em>list of int</em> default: <code>[]</code>)</strong> - Render vertical rulers at given columns.</p></li>
+<li><p><code>explorer.autoReveal</code> <strong>(<em>string|bool</em> default: <code>true</code>)</strong>  - When <code>true</code>, the file explorer will jump to highlight the file current focused. When <code>false</code> the file explorer will remain static. If a string is entered it must be <code>&quot;focusNoScroll&quot;</code> which will still highlight the currently focused file in the file explorer but the file explorer will not scroll to it. Any other string supplied will be treated as if <code>false</code> was entered and the file explorer will remain static and not highlight the currently focused file.</p></li>
 <li><p><code>editor.scrollShadow</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, show a drop-shadow effect at the borders when there is additional content past the visible area.</p></li>
 <li><p><code>editor.smoothScroll</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, smoothly scroll the editor when the viewport is adjusted due to a cursor motion.</p></li>
-<li><p><code>editor.yankHighlightAnimation</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, briefly highlight yanks on the editor surface.</p></li>
 <li><p><code>editor.zenMode.singleFile</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, the Onivim will automatically enter zen mode when started up with a single file. Zen mode hides most of the UI until disabled via the command pallette.</p></li>
 <li><p><code>editor.zenMode.hideTabs</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, the Onivim will hide the buffer tabs from the user whilst in zen mode. Zen mode can be toggled in the command pallette, or automatically enabled with the <code>editor.zenMode.singleFile</code> configuration option.</p></li>
 <li><p><code>workbench.colorTheme</code> <strong>(<em>string</em> default:<code>&quot;One Dark Pro&quot;</code>)</strong> - Color theme to use.</p></li>
 <li><p><code>workbench.iconTheme</code> <strong>(<em>string</em> default: <code>&quot;vs-seti&quot;</code>)</strong> - Icon theme to use.</p></li>
 <li><p><code>workbench.tree.indent</code> <strong>(<em>int</em> default: <code>2</code>)</strong> - Indentation of the tree explorer.</p></li>
+<li><p><code>vim.highlightedyank.enable</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, briefly highlight yanks on the editor surface.</p></li>
+<li><p><code>vim.highlightedyank.color</code> <strong>(<em>string</em>)</strong> - Hex string defining a color, ie <code>#FF00FFFF</code>.</p></li>
+<li><p><code>vim.highlightedyank.duration</code> <strong>(<em>int</em> default: <code>300</code>)</strong> - The time, in milliseconds, the yank highlight is visible.</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="layout"></a><a href="#layout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Layout</h2>
 <ul>
