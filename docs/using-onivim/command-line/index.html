@@ -61,7 +61,7 @@
 during the Installation process, if the option is selected during installation.</p>
 <h2><a class="anchor" aria-hidden="true" id="macos"></a><a href="#macos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>macOS</h2>
 <p>On macOS, <code>oni2</code> can be added manually with the &quot;Add to System PATH&quot; command in the
-command pallette, by pressing <code>Cmd-Shift-P</code> and searching for <code>System</code>.</p>
+command palette, by pressing <code>Cmd-Shift-P</code> and searching for <code>System</code>.</p>
 <p>After selecting the option and giving admin permissions, the <code>oni2</code> executable
 should be accessible.</p>
 <blockquote>
@@ -90,7 +90,7 @@ flags.</p>
 that file is in. That is, <code>oni2 ~/my_project/docs/cli.md</code> will open <code>cli.md</code> in Oni2, and set the folder
 to <code>~/my_project/docs/</code>. There is also a Zen mode configuration option around this single file mode, which
 is outlined over <a href="/docs/configuration/settings">here</a>. By default, when opening with 1 file, <code>oni2</code> will
-enter Zen mode, which can be disabled from the command pallette.</p>
+enter Zen mode, which can be disabled from the command palette.</p>
 <p>You can also pass over multiple files to open at once, and the first folder will be used as the current
 working directory (unless over-ridden with the <code>--working-directory</code> flag.)</p>
 <p>Launching <code>oni2</code> with a folder will open that folder. That is, <code>oni2 ~/git</code> will open <code>~/git</code> in Oni2
@@ -125,7 +125,7 @@ and provide logging output.</p>
 <ul>
 <li><code>ONI2_DEBUG</code> or <code>--debug</code> (e.g., <code>ONI2_DEBUG=1 oni2 -f</code> or <code>oni2 -f --debug</code>) - enable debug logging. This is very verbose but is helpful when logging issues!</li>
 <li><code>--trace</code> - enable trace logging. This is extremely verbose!</li>
-<li><code>--quiet</code> - print only error log messages. This can be sueful to quickly see if an extension failed to load, for example.</li>
+<li><code>--quiet</code> - print only error log messages. This can be useful to quickly see if an extension failed to load, for example.</li>
 <li><code>ONI2_LOG_FILE</code> or <code>--log-file</code> (e.g., <code>ONI2_LOG_FILE='oni.log' oni2</code> or <code>oni2 --log-file oni.log</code>) - enable logging to a file.</li>
 <li><code>ONI2_LOG_FILTER</code> or <code>--log-filter</code> (e.g.. <code>ONI2_LOG_FILTER=Oni2.* oni2 -f</code> or <code>oni2 -f --log-filter &quot;Oni2.*&quot;</code>) - filter log messages using a comma-separated list of glob patterns matched against each message's namespace. Prefix a pattern with <code>-</code> to exclude rather than include matches. E.g. <code>ONI2_LOG_FILTER=&quot;Oni2.*, -*Ext*&quot;</code> will include everything that matches <code>Oni2.*</code>, but exclude messages that also match <code>*Ext*</code>.</li>
 </ul>
