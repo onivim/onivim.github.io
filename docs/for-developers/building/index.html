@@ -59,7 +59,12 @@
 <ul>
 <li>Install <a href="https://git-scm.com/">Git</a></li>
 <li>Install <a href="https://nodejs.org/en">Node</a></li>
-<li>Install <a href="https://esy.sh">Esy</a> (<strong>0.6.2</strong> or above is required, but the latest version is recommended: <code>npm install -g esy@latest</code>)</li>
+<li>Install <a href="https://esy.sh">Esy</a> (<strong>0.6.2</strong> or above is required, but the latest version is recommened: <code>npm install -g esy@latest</code>)</li>
+</ul>
+<blockquote>
+<p><strong>NOTE:</strong> <strong>Linux-only</strong>: if you need to install using <code>sudo npm -g esy@latest</code> then your NPM installation <strong>might be broken</strong> follow <a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">the instruction here to fix it</a> this is related to this issue <a href="https://github.com/esy/esy/issues/1099">esy/esy#1099.</a></p>
+</blockquote>
+<ul>
 <li><strong>Windows-only</strong>: Run <code>npm install -g windows-build-tools</code> (this installs some build tools that aren't included by default on Windows)</li>
 <li>Install any other system packages required by Oni2 dependencies, as outlined below.</li>
 </ul>
@@ -145,9 +150,11 @@ node install-node-deps.js
 <p>To create a release build, run:</p>
 <ul>
 <li><code>esy '@release' run -f --checkhealth</code></li>
+<li><code>esy '@release' install</code></li>
 <li><code>esy '@release' create</code></li>
 </ul>
-<p>This will create a <code>_release</code> folder at the root with the application bundle inside.</p>
+<p>This will create a <code>_esy/release</code> folder at the root with the application bundle inside that folder there will be folders for built binaries, in <code>_esy/release/install/bin</code> the <code>Oni2</code> binary resides along <code>Oni2_editor</code>.</p>
+<p>Mind that these are actually symbolic links to <code>oni2/_esy/release/store/b/oni2-&lt;hashvalue&gt;/install/default/bin/Oni2</code>, the same is true for the <code>Oni2_editor</code> binary.</p>
 <h3><a class="anchor" aria-hidden="true" id="windows-1"></a><a href="#windows-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Windows</h3>
 <h3><a class="anchor" aria-hidden="true" id="osx"></a><a href="#osx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX</h3>
 <p>Once you have a release build created, you can install Oni2 in your <code>Applications</code> folder.</p>
