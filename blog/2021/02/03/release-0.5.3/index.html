@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Feb 2021: 0.5.3 Release · Onivim 2 User Manual</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Time flies - can&#x27;t believe it&#x27;s been a month and it&#x27;s time to release 0.5.3. It&#x27;s nice to be able to share what&#x27;s happening more frequently!"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Feb 2021: 0.5.3 Release · Onivim 2 User Manual"/><meta property="og:type" content="website"/><meta property="og:url" content="https://your-docusaurus-test-site.com/blog/2021/02/03/release-0.5.3"/><meta property="og:description" content="Time flies - can&#x27;t believe it&#x27;s been a month and it&#x27;s time to release 0.5.3. It&#x27;s nice to be able to share what&#x27;s happening more frequently!"/><meta property="og:image" content="https://your-docusaurus-test-site.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://your-docusaurus-test-site.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo2.png" alt="Onivim 2 User Manual"/><h2 class="headerTitleWithLogo">Onivim 2 User Manual</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://v2.onivim.io/early-access-portal" target="_self">Early Access</a></li><li class=""><a href="https://v2.onivim.io/#about" target="_self">About</a></li><li class=""><a href="https://v2.onivim.io/#timeline" target="_self">Timeline</a></li><li class=""><a href="/docs/getting-started/why-onivim" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2021/02/03/release-0.5.3">Feb 2021: 0.5.3 Release</a></li><li class="navListItem"><a class="navItem" href="/blog/2021/01/06/release-0.5.2">Jan 2021: 0.5.2 (and 0.5.1) Release</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2021/02/03/release-0.5.3">Feb 2021: 0.5.3 Release</a></h1><p class="post-meta">February 3, 2021</p><div class="authorBlock"><p class="post-authorName"><a href="http://twitter.com/bryphe" target="_blank" rel="noreferrer noopener">Bryan Phelps</a></p></div></header><div><span><p>Time flies - can't believe it's been a month and it's time to release 0.5.3. It's nice to be able to share what's happening more frequently!</p>
+<h2><a class="anchor" aria-hidden="true" id="whats-new-in-053"></a><a href="#whats-new-in-053" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's new in 0.5.3</h2>
+<h3><a class="anchor" aria-hidden="true" id="codelens"></a><a href="#codelens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CodeLens</h3>
+<p>Onivim now supports rendering inline elements <em>between</em> lines of code - and we use it in Onivim 0.5.3 to implement CodeLens, which is contextual information interspersed with source code.</p>
+<p>It's particularly useful for working with ReasonML or OCaml, because those extensions show the type signatures that are being inferred, as you edit:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/107292382-9a95be00-6a1e-11eb-96ac-c02eb0ab68cf.gif" alt="codelens"></p>
+<p>Having that live type inference for those languages is a tremendous time-saver!</p>
+<p>However, there are several other extensions that use CodeLens, too. For example, the bundled JavaScript &amp; TypeScript extensions can show reference counts for functions and classes:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/106821440-04365680-6632-11eb-8844-6e614a839352.gif" alt="typescript-codelens"></p>
+<p>(The TypeScript and JavaScript extensions require setting the <code>&quot;typescript.referencesCodeLens.enabled&quot;</code> and <code>&quot;javascript.referencesCodeLens.enabled&quot;</code> configuration settings to <code>true</code>, respectively).</p>
+<p>The <a href="https://open-vsx.org/extension/muhammad-sammy/csharp">C# extension</a> uses CodeLens to show reference counts:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/103705332-b4476f80-4f5f-11eb-8c84-cc2a2d9b99dd.gif" alt="csharp"></p>
+<p>In addition, language extensions like <a href="https://open-vsx.org/extension/Elmtooling/elm-ls-vscode">Elm</a> use CodeLens to show reference count, as well as which functions are part of the public interface:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/106822417-f550a380-6633-11eb-99ec-eb839aaf1eca.png" alt="elm-codelens"></p>
+<p>This is a feature that I had always wanted in Onivim v1, but never could get quite right. In Onivim v1, we were constrained to the editor model as a <a href="https://onivim.github.io/docs/other/motivation#a-new-view-layer">terminal-grid-of-characters</a> -
+this makes it quite tricky to bolt-on rendering this interspersed contextual information. However, because Onivim v2 handles the complete
+rendering pipeline for the editor surface, and is decoupled from the editor being modeled as a terminal-grid-of-characters, it becomes easier, or at least tractable, to implement.</p>
+<p>Even still, there were many challenges with performance, with animation, with aligning the viewport to minimize 'jerk', and CodeLens touches
+many other features such as word wrap and scrolling. In particular, our function that maps 'buffer position' (a line and a byte) to 'pixel space' needed to be updated to account for
+inline elements like CodeLens taking up space (and be quick to calculate when changed, as occurs when the inline elements animate open).</p>
+<p>It's an exciting feature, though, because the infrastructure for these inline elements is fairly general - meaning Onivim can potentially render <em>arbitrary UI</em> in between lines.
+I'm looking forward to building on this foundation in the future to implement other features, like an inline diff view, or a keyboard accessible 'peek view' to show references
+or slices of code from other buffers, without needing to leave your current buffer. Let me know if you have ideas!</p>
+<p>Some users may find this feature distracting, though, so you can turn off CodeLens by setting:</p>
+<pre><code class="hljs"><span class="hljs-attr">"editor.codeLens":</span> <span class="hljs-literal">false</span>
+</code></pre>
+<p>in your configuration.</p>
+<h3><a class="anchor" aria-hidden="true" id="menu-bar"></a><a href="#menu-bar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Menu bar</h3>
+<p>Finally... Onivim has a menu bar on all platforms!</p>
+<p>On OSX, we integrate with the native application bar:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/104387736-9a240900-54ec-11eb-9978-9d3a66c9fe76.gif" alt="2021-01-12 15 40 15"></p>
+<p>And the feature is also available on Windows and Linux, using a custom-rendered menu bar:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/106936105-04396380-66d1-11eb-9cc5-a91a5d0dd69a.png" alt="linux-menu-bar"></p>
+<p>It's pretty spartan at the moment... but it provides the infrastructure necessary to add more commands.</p>
+<p>The menu bar is on by default, but it can be turned off on Windows and Linux with the following configuration entry:</p>
+<pre><code class="hljs"><span class="hljs-string">"window.menuBarVisibility"</span>: <span class="hljs-string">"hidden"</span>
+</code></pre>
+<p>Thanks to <a href="https://twitter.com/zachbaylin">@zbaylin</a> for all the work done to wire up the native OSX APIs to support this feature!</p>
+<h3><a class="anchor" aria-hidden="true" id="preview-functionality"></a><a href="#preview-functionality" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preview functionality</h3>
+<p><a href="https://twitter.com/fanantoxa">@fanantoxa</a> has implemented a great feature for mouse users - preview functionality.</p>
+<p>Preview mode, which is on-by-default, means that the tab for an editor is re-used when clicking on it via the file explorer (and for other views, like search).
+This is helpful for users who explore the workspace with the mouse, as it keeps editor tabs from cluttering up the split until they've settled on the right file to work with.</p>
+<p><img src="https://user-images.githubusercontent.com/7717033/96443563-7dda3e00-1215-11eb-9651-96b32ca36692.gif" alt="preview-mode"></p>
+<p>Thanks <a href="https://twitter.com/fanantoxa">@fanantoxa</a> for the awesome contribution!</p>
+<h3><a class="anchor" aria-hidden="true" id="configurable-font-weight"></a><a href="#configurable-font-weight" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurable font weight</h3>
+<p>In 0.5.3, the font weight for Onivim is configurable, courtesy of <a href="https://twitter.com/marcagba">@marcagba</a>! Another feature that has been a long time coming.</p>
+<p>This is controlled by a newly added <code>&quot;editor.fontWeight&quot;</code> setting:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/106826500-e40b9500-663b-11eb-815d-e2235fe574f0.gif" alt="editor-font-weight"></p>
+<p>Thanks <a href="https://twitter.com/marcagba">@marcagba</a> for your magnificent work implementing this!</p>
+<h3><a class="anchor" aria-hidden="true" id="additional-language-servers"></a><a href="#additional-language-servers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional language servers</h3>
+<p>Onivim now bundles an HTML language server:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/106822846-b7a04a80-6634-11eb-876c-96299c0d6e03.gif" alt="html-language-server"></p>
+<p>The HTML language server supports diagnostics, codelens, completion, and an outline view.</p>
+<p>We've also bundled a JSON language server, which features diagnostics and outline view integration.</p>
+<h3><a class="anchor" aria-hidden="true" id="extension-host-bug-fixes"></a><a href="#extension-host-bug-fixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extension host bug fixes</h3>
+<p>We've upgraded the extension host (from 1.51.0 to 1.52.1) - bringing us up-to-date with the Code extension host. Our goal
+is to be within a month of the official extension host, so that we can ensure that extensions stay compatible.</p>
+<p>In addition, we've continued to fix blockers around extensions, notably:</p>
+<ul>
+<li><a href="https://github.com/onivim/oni2/pulls/2839">#2839</a>, <a href="https://github.com/onivim/oni2/pulls/2990">#2990</a> - Fix signature help staying open in normal mode and extra Escape key press</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2995">#2995</a> - Fix blocking bugs for <code>nim</code> extension</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2999">#2999</a> - Fix diagnostics not displaying the <code>Elmtooling.elm</code> extension</li>
+<li><a href="https://github.com/onivim/oni2/pulls/3000">#3000</a> - Fix out-of-order search results in extension pane (thanks <a href="https://github.com/jakubbaron">@jakubbaron</a>!)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="vim-bug-fixes"></a><a href="#vim-bug-fixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim bug fixes</h3>
+<p>We've also continued to fix issues in our Vim layer - here's a snapshot of some of the changes:</p>
+<ul>
+<li><a href="https://github.com/onivim/oni2/pulls/2878">#2878</a> - <code>Control+[</code> now behaves like <code>Esc</code> across the UI</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2877">#2877</a> - Conflicting <code>Control+b</code> bindings were removed</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2871">#2871</a> - <code>Control+o</code> behavior in insert mode is fixed</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2884">#2884</a> - <code>:tabnew</code>/<code>:new</code>/<code>:vnew</code> behavior is fixed</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2891">#2891</a> - Fix count behavior for L/H jumps</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2908">#2908</a> - Fix no-recursive remap behavior</li>
+<li><a href="https://github.com/onivim/oni2/pulls/2978">#2978</a> - Fix <code>m-</code> modifier key behavior</li>
+</ul>
+<p>The full changelog can be found here: <a href="https://github.com/onivim/oni2/blob/5531c29372fe93913aa1af60bfbc671542d65880/CHANGES_CURRENT.md">Changelog</a></p>
+<p>The latest stable and nightly builds are available here: <a href="https://v2.onivim.io/early-access-portal">Early Access Portal</a></p>
+<h2><a class="anchor" aria-hidden="true" id="whats-next"></a><a href="#whats-next" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's Next</h2>
+<p>For our 0.5.4 (March) build, we're still working towards the 0.6.0 goals on our timeline - in particular, the focus for 0.5.4 is integrating snippet functionality in the editor:</p>
+<p><img src="https://user-images.githubusercontent.com/13532591/106326862-0794a100-6232-11eb-9fc0-e19567d158a3.gif" alt="snippets"></p>
+<p>I'll look forward to updating you on the progress there next month.</p>
+<p>Thanks for reading, and for helping us towards achieving this goal of &quot;Modal Editing from the Future&quot;! Your help, feedback, and support has been critical in allowing us to progress and push forward.</p>
+<p>Stay safe and healthy!</p>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/blog/">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#whats-new-in-053">What's new in 0.5.3</a><ul class="toc-headings"><li><a href="#codelens">CodeLens</a></li><li><a href="#menu-bar">Menu bar</a></li><li><a href="#preview-functionality">Preview functionality</a></li><li><a href="#configurable-font-weight">Configurable font weight</a></li><li><a href="#additional-language-servers">Additional language servers</a></li><li><a href="#extension-host-bug-fixes">Extension host bug fixes</a></li><li><a href="#vim-bug-fixes">Vim bug fixes</a></li></ul></li><li><a href="#whats-next">What's Next</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home" style="opacity:0"><img src="/img/logo2.png" alt="Onivim 2 User Manual" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting-started/why-onivim">Getting Started</a><a href="/docs/using-onivim/moving-in-onivim">Basic Usage</a><a href="/docs/for-developers/building">For Developers</a><a href="/docs/other/faq">FAQ</a></div><div><h5>Community</h5><a href="https://reddit.com/r/onivim">Reddit</a><a href="https://discord.gg/7maEAxV">Discord</a><a href="https://twitter.com/oni_vim" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/onivim/oni2">GitHub</a><a class="github-button" href="https://github.com/onivim/oni2" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2021 Outrun Labs, LLC</section></footer></div></body></html>
