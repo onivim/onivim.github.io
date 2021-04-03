@@ -156,11 +156,19 @@
 <tbody>
 <tr><td><code>editorTextFocus</code></td><td>An editor has focus</td></tr>
 <tr><td><code>inSnippetMode</code></td><td>A snippet session is currently active</td></tr>
+<tr><td><code>renameInputVisible</code></td><td>The rename input is visible</td></tr>
+<tr><td><code>suggestWidgetVisible</code></td><td>The suggest widget (auto-completion) is visible</td></tr>
 <tr><td><code>textInputFocus</code></td><td>A text input area has focus</td></tr>
 <tr><td><code>terminalFocus</code></td><td>A terminal has focus</td></tr>
-<tr><td><code>suggestWidgetVisible</code></td><td>The suggest widget (auto-completion) is visible</td></tr>
 </tbody>
 </table>
+<p>The <code>activeViewlet</code> context key corresponds to the id of the open sidebar pane:</p>
+<ul>
+<li><code>workbench.view.explorer</code> - File Explorer</li>
+<li><code>workbench.view.extensions</code> - Extensions</li>
+<li><code>workbench.view.scm</code> - SCM</li>
+<li><code>workbench.view.search</code> - Search</li>
+</ul>
 <p>Onivim-specific contexts:</p>
 <table>
 <thead>
@@ -173,6 +181,9 @@
 <tr><td><code>sneakMode</code></td><td>Sneak mode is active</td></tr>
 <tr><td><code>commandLineFocus</code></td><td>The Vim commandline is open</td></tr>
 <tr><td><code>listFocus</code></td><td>A list of items (like a pop-up menu) is focused</td></tr>
+<tr><td><code>sideBarFocus</code></td><td>The sidebar has focus visible</td></tr>
+<tr><td><code>sideBarVisible</code></td><td>The sidebar is visible</td></tr>
+<tr><td><code>paneFocus</code></td><td>The bottom pane has focus</td></tr>
 <tr><td><code>vimListNavigation</code></td><td>Inside a Vim-navigable list</td></tr>
 <tr><td><code>vimTreeNavigation</code></td><td>Inside the file explorer</td></tr>
 </tbody>
