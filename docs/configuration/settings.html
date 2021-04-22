@@ -126,6 +126,14 @@
 <li><p><code>editor.zenMode.singleFile</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, the Onivim will automatically enter zen mode when started up with a single file. Zen mode hides most of the UI until disabled via the command pallette.</p></li>
 <li><p><code>editor.zenMode.hideTabs</code> <strong>(<em>bool</em> default: <code>true</code>)</strong> - When <code>true</code>, the Onivim will hide the buffer tabs from the user whilst in zen mode. Zen mode can be toggled in the command pallette, or automatically enabled with the <code>editor.zenMode.singleFile</code> configuration option.</p></li>
 <li><p><code>files.exclude</code> <strong>(<em>list of string</em> default: <code>[&quot;.git&quot;, &quot;_esy&quot;, &quot;node_modules&quot;]</code>)</strong> - When using <code>Quick Open</code> or <code>Find in files</code>, Onivim will ignore the files inside the directories listed here</p></li>
+<li><p><code>files.autoSave</code> <strong>(<em>string</em> default: <code>&quot;off&quot;</code>)</strong> - controls when buffers are auto-saved:</p>
+<ul>
+<li><em>&quot;off&quot;</em> - Do not auto-save at all</li>
+<li><em>&quot;afterDelay&quot;</em> - Auto-save after the delay specified by <code>&quot;files.autoSaveDelay&quot;</code></li>
+<li><em>&quot;onFocusChange&quot;</em> - Auto-save when changing focus between buffers</li>
+<li><em>&quot;onWindowChange&quot;</em> - Auto-save when the Onivim application window loses focus</li>
+</ul></li>
+<li><p><code>files.autoSaveDelay</code> <strong>(<em>int</em> default: <code>1000</code>)</strong> - specifies the time, in milliseconds, to wait to auto-save a buffer when <code>files.autoSave</code> is set to <code>&quot;afterDelay&quot;</code></p></li>
 <li><p><code>search.exclude</code> <strong>(<em>list of string</em> default: <code>[]</code>)</strong> - When using <code>Find in files</code> Onivim will not look at files located at the directories listed here, this inherit all the values from <code>files.exclude</code></p></li>
 <li><p><code>workbench.colorTheme</code> <strong>(<em>string</em> default:<code>&quot;One Dark Pro&quot;</code>)</strong> - Color theme to use.</p></li>
 <li><p><code>workbench.iconTheme</code> <strong>(<em>string</em> default: <code>&quot;vs-seti&quot;</code>)</strong> - Icon theme to use.</p></li>
