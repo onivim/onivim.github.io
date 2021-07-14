@@ -139,6 +139,7 @@
 </ul></li>
 <li><p><code>files.autoSaveDelay</code> <strong>(<em>int</em> default: <code>1000</code>)</strong> - specifies the time, in milliseconds, to wait to auto-save a buffer when <code>files.autoSave</code> is set to <code>&quot;afterDelay&quot;</code></p></li>
 <li><p><code>search.exclude</code> <strong>(<em>list of string</em> default: <code>[]</code>)</strong> - When using <code>Find in files</code> Onivim will not look at files located at the directories listed here, this inherit all the values from <code>files.exclude</code></p></li>
+<li><p><code>search.followSymlinks</code> <strong>(<em>bool</em> default:  <code>true</code>)</strong> - Set whether to follow symlinks when searching</p></li>
 <li><p><code>workbench.colorCustomizations</code> <strong>(<em>json</em> default: <code>{}</code>)</strong> - Color theme overrides, using the same <a href="https://code.visualstudio.com/api/references/theme-color">Theme Colors as Code</a> - for example:</p></li>
 </ul>
 <pre><code class="hljs css language-json">  "workbench.colorCustomizations": {
